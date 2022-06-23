@@ -34,8 +34,17 @@
           class="form-control"
           type="text"
           placeholder="Agregar favorito"
+          [(ngModel)]="nuevoJuego"
+          name="nuevoJuego"
+          (keyup.enter)="agregarJuego()"
         />
-        <button class="btn btn-outline-primary" type="button">Agregar</button>
+        <button
+          class="btn btn-outline-primary"
+          type="button"
+          (click)="agregarJuego()"
+        >
+          Agregar
+        </button>
       </div>
     </div>
   </div>

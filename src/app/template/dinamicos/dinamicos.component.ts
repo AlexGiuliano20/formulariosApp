@@ -16,6 +16,8 @@ interface Favorito {
   styles: [],
 })
 export class DinamicosComponent {
+  nuevoJuego: string = '';
+
   persona: Persona = {
     nombre: 'Alex',
     favoritos: [
@@ -29,6 +31,16 @@ export class DinamicosComponent {
       },
     ],
   };
+
+  agregarJuego() {
+    const nuevoFavorito: Favorito = {
+      id: this.persona.favoritos.length + 1,
+      nombre: this.nuevoJuego,
+    };
+
+    this.persona.favoritos.push({ ...nuevoFavorito });
+    this.nuevoJuego = '';
+  }
 
   guardar() {
     console.log('Formulario posteado');
