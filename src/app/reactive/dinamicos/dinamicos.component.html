@@ -30,7 +30,13 @@
           placeholder="Agregar favorito"
           (keyup.enter)="agregarFavorito()"
         />
-        <button class="btn btn-outline-primary" type="button">Agregar</button>
+        <button
+          class="btn btn-outline-primary"
+          type="button"
+          (click)="agregarFavorito()"
+        >
+          Agregar
+        </button>
       </div>
     </div>
   </div>
@@ -44,7 +50,11 @@
         *ngFor="let favorito of favoritosArr.controls; let i = index"
       >
         <input class="form-control" type="text" [formControlName]="i" />
-        <button class="btn btn-outline-danger" type="button" (click)="borrar(i)">
+        <button
+          class="btn btn-outline-danger"
+          type="button"
+          (click)="borrar(i)"
+        >
           Eliminar
         </button>
       </div>
